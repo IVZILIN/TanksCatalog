@@ -10,5 +10,11 @@ namespace TanksCatalog.Dtos
         [Required]
         [Range(1,10000000)]
         public decimal Price { get; init; }
+        [Required]
+        [Range(1,100000)]
+        public decimal EnginSpeed {get; init;}
+        [Required]
+        [Range(30,255)]
+        public decimal BarrelGauge {get;init;}
     }
 }
