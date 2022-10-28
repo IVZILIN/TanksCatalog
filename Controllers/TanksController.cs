@@ -50,7 +50,9 @@ namespace TanksCatalog.Controllers
                 Id = Guid.NewGuid(),
                 Model = tankDto.Model,
                 Price = tankDto.Price,
-                CreatedDate = DateTimeOffset.UtcNow
+                CreatedDate = DateTimeOffset.UtcNow,
+                EnginSpeed = tankDto.EnginSpeed,
+                BarrelGauge = tankDto.BarrelGauge
             };
 
             await repositry.CreateTankAsync(tank);
@@ -72,7 +74,9 @@ namespace TanksCatalog.Controllers
             Tank updatedTank = existingTank with
             {
                 Model = tankDto.Model,
-                Price = tankDto.Price
+                Price = tankDto.Price,
+                EnginSpeed = tankDto.EnginSpeed,
+                BarrelGauge = tankDto.BarrelGauge
             };
 
             await repositry.UpdateTankAsync(updatedTank);
